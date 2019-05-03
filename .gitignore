@@ -4,7 +4,7 @@ node_modules/
 .cache/
 .vscode/
 yarn-error.log
-dist/
+!dist/
 !app/dist/
 react-step-wizard-*.tgz
 coverage/
