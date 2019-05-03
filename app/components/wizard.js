@@ -46,17 +46,19 @@ export default class Wizard extends Component {
         const { SW, demo } = this.state;
 
         return (
-            <div className='container'>
+            <div className='container max-height-container' >
                 <h3>React Step Wizard</h3>
-                <div className={'jumbotron'}>
-                    <div className='row'>
-                        <div className={`col-12 col-sm-6 offset-sm-3 ${styles['rsw-wrapper']}`}>
+                <div className={'jumbotron max-height'}>
+                    <div className='row max-height'>
+                        <div className={'max-height'}>
                             <StepWizard
                                 onStepChange={this.onStepChange}
                                 isHashEnabled
                                 transitions={this.state.transitions} // comment out this line to use default transitions
                                 nav={<Nav />}
                                 instance={this.setInstance}
+                                className={'max-height'}
+                                classNameWrapper={'max-height'}
                             >
                                 <First hashKey={'FirstStep'} update={this.updateForm} />
                                 <Second form={this.state.form} />
@@ -127,7 +129,7 @@ class First extends Component {
 
     render() {
         return (
-            <div>
+            <div className={'max-height'}>
                 <h3 className='text-center'>Welcome! Have a look around!</h3>
 
                 <label>First Name</label>

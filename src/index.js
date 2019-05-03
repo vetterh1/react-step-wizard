@@ -162,6 +162,7 @@ export default class StepWizard extends PureComponent {
             goToStep: this.goToStep,
             firstStep: this.firstStep,
             lastStep: this.lastStep,
+            classNameWrapper: this.props.classNameWrapper,
         };
 
         const { classes } = this.state;
@@ -186,7 +187,7 @@ export default class StepWizard extends PureComponent {
         return (
             <div className={this.props.className}>
                 {this.props.nav && React.cloneElement(this.props.nav, props)}
-                <div className={styles['step-wrapper']}>
+                <div className={`${styles['step-wrapper']} ${this.props.classNameWrapper ? this.props.classNameWrapper : ''}`.trim()}>
                     {childrenWithProps}
                 </div>
             </div>
@@ -222,8 +223,9 @@ export const Step = ({
     children,
     isActive,
     transitions,
+    classNameWrapper,
 }) => (
-    <div className={`${styles.step} ${transitions} ${isActive ? styles.active : ''}`.trim()}>
+    <div className={`${styles.step} ${transitions} ${isActive ? styles.active : ''} ${classNameWrapper ? classNameWrapper : ''}`.trim()}>
         { children }
     </div>
 );
