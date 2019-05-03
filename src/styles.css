@@ -1,9 +1,7 @@
 /** Step Wizard */
 .step-wrapper {
     position: relative;
-
 }
-
 
 .step {
     opacity: 0;
